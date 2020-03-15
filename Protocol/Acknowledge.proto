@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Connection {
+    tron.protocol.common.Player player = 1;
+    tron.protocol.common.ConnectState action = 2;
+}

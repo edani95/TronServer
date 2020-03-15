@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Configure {
+    tron.protocol.common.Color color = 1;
+    tron.protocol.common.Setting settings = 2;
+}

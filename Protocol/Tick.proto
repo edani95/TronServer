@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Tick {
+    int32 countdown = 1;
+    bool last_tick = 2;
+    repeated tron.protocol.common.Change changes = 3;
+}

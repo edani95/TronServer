@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Error {
+    tron.protocol.common.ErrorCode error_code = 1;
+    string message = 2;
+}

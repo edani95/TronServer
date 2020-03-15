@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Chat {
+    tron.protocol.common.Color color = 1;
+    string message = 2;
+}

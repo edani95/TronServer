@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tron.Server", "Tron.Server\Tron.Server.csproj", "{E58A64AC-6F9C-43A6-B0DB-3BA740881B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tron.Server", "Tron.Server\Tron.Server.csproj", "{E58A64AC-6F9C-43A6-B0DB-3BA740881B84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protocol", "Protocol", "{CE49B5A5-69D1-4CC3-BBDC-60A7B8CD986D}"
+	ProjectSection(SolutionItems) = preProject
+		Protocol\Acknowledge.proto = Protocol\Acknowledge.proto
+		Protocol\Chat.proto = Protocol\Chat.proto
+		Protocol\Common.proto = Protocol\Common.proto
+		Protocol\Configure.proto = Protocol\Configure.proto
+		Protocol\Connect.proto = Protocol\Connect.proto
+		Protocol\Error.proto = Protocol\Error.proto
+		Protocol\Event.proto = Protocol\Event.proto
+		Protocol\Ready.proto = Protocol\Ready.proto
+		Protocol\Start.proto = Protocol\Start.proto
+		Protocol\Tick.proto = Protocol\Tick.proto
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

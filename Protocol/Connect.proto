@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Request {
+    string name = 1;
+    string connection_group_id = 2;
+    tron.protocol.common.Privacy privacy = 3;
+}
+
+message Response {
+    tron.protocol.common.Color color = 1;
+    string connection_group_id = 2;
+    tron.protocol.common.Setting settings = 3;
+    repeated tron.protocol.common.Player players = 4;
+}

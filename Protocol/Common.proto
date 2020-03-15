@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package tron.protocol.common;
+
+enum Privacy {
+    PRIVACY_PUBLIC = 0;
+    PRIVACY_PRIVATE = 1;
+}
+
+enum Direction {
+    DIRECTION_UP = 0;
+    DIRECTION_DOWN = 1;
+    DIRECTION_LEFT = 2;
+    DIRECTION_RIGHT = 3;
+}
+
+enum ConnectState {
+    CONNECTSTATE_CONNECT = 0;
+    CONNECTSTATE_DISCONNECT = 1;
+}
+
+enum ErrorCode {
+    ERRORCODES_OTHER = 0;
+    ERRORCODES_NOT_EXISTING_LOBBY = 1;
+    //TODO: extend list of most common errors
+}
+
+message Color {
+    string rgb = 1;
+}
+
+message Player {
+    string name = 1;
+    Color color = 2;
+    bool ready = 3;
+}
+
+message Position {
+    int32 position_id = 1;
+    int32 coordinate_x = 2;
+    int32 coordinate_y = 3;
+    Direction direction = 4;
+}
+
+message Setting {
+    int32 width = 1;
+    int32 height = 2;
+    int32 speed = 3;
+    int32 countdown = 4;
+    repeated Position start_positions = 5;
+}
+
+message PlayerPosition {
+    Color color = 1;
+    int32 position_id = 2;
+}
+
+message Change {
+    Color color = 1;
+    Direction direction = 2;
+    bool dead = 3;
+}

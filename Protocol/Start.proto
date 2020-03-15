@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+package tron.protocol.messages;
+
+message Start {
+    repeated tron.protocol.common.PlayerPosition player_positions = 1;
+}
