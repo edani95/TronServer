@@ -6,13 +6,13 @@ import "Ready.proto";
 
 package tron.protocol.wrappers.server;
 
-enum ChatWrapperMessageType {
+enum ChatServerWrapperMessageType {
     CHATWRAPPERMESSAGETYPE_CHAT = 0;
     CHATWRAPPERMESSAGETYPE_READY = 1;
     CHATWRAPPERMESSAGETYPE_CONFIGURE = 2;
 }
 
-message ChatWrapper {
+message ChatServerWrapper {
     ChatWrapperMessageType message_type = 1;
     oneof real_message {
         tron.protocol.messages.Chat chat_message = 2;
