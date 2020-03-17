@@ -9,17 +9,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protocol", "Protocol", "{CE
 	ProjectSection(SolutionItems) = preProject
 		Protocol\Acknowledge.proto = Protocol\Acknowledge.proto
 		Protocol\Chat.proto = Protocol\Chat.proto
+		Protocol\ClientChatWrapper.proto = Protocol\ClientChatWrapper.proto
+		Protocol\ClientConnectWrapper.proto = Protocol\ClientConnectWrapper.proto
+		Protocol\ClientGameWrapper.proto = Protocol\ClientGameWrapper.proto
 		Protocol\Common.proto = Protocol\Common.proto
 		Protocol\Configure.proto = Protocol\Configure.proto
 		Protocol\Connect.proto = Protocol\Connect.proto
 		Protocol\Error.proto = Protocol\Error.proto
 		Protocol\Event.proto = Protocol\Event.proto
 		Protocol\Ready.proto = Protocol\Ready.proto
+		Protocol\ServerChatWrapper.proto = Protocol\ServerChatWrapper.proto
 		Protocol\Start.proto = Protocol\Start.proto
 		Protocol\Tick.proto = Protocol\Tick.proto
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tron.Protocol", "Tron.Protocol\Tron.Protocol.csproj", "{B71959DB-F90F-4935-82A8-E9BB789735AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tron.Protocol", "Tron.Protocol\Tron.Protocol.csproj", "{B71959DB-F90F-4935-82A8-E9BB789735AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tron.Engine", "Tron.Engine\Tron.Engine.csproj", "{82DE3EBE-9F30-4033-B7C6-EDB0715975F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +41,10 @@ Global
 		{B71959DB-F90F-4935-82A8-E9BB789735AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B71959DB-F90F-4935-82A8-E9BB789735AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B71959DB-F90F-4935-82A8-E9BB789735AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DE3EBE-9F30-4033-B7C6-EDB0715975F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DE3EBE-9F30-4033-B7C6-EDB0715975F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DE3EBE-9F30-4033-B7C6-EDB0715975F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DE3EBE-9F30-4033-B7C6-EDB0715975F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
