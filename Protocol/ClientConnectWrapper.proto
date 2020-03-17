@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "Connect.proto";
+import "Error.proto";
+
+package tron.protocol.wrappers.client;
+
+enum ConnectWrapperMessageType {
+    CONNECTWRAPPERMESSAGETYPE_ERROR = 0;
+    CONNECTWRAPPERMESSAGETYPE_RESPONSE = 1;
+}
+
+message ConnectWrapper {
+    ConnectWrapperMessageType message_type = 1;
+    oneof real_message {
+        tron.protocol.messages.Error error_message = 2;
+        tron.protocol.messages.Response response_message = 3;
+    }
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "Acknowledge.proto";
+import "Chat.proto";
+import "Configure.proto";
+import "Error.proto";
+import "Ready.proto";
+import "Start.proto";
+
+package tron.protocol.wrappers.client;
+
+enum ChatWrapperMessageType {
+    CHATWRAPPERMESSAGETYPE_ERROR = 0;
+    CHATWRAPPERMESSAGETYPE_CHAT = 1;
+    CHATWRAPPERMESSAGETYPE_READY = 2;
+    CHATWRAPPERMESSAGETYPE_CONFIGURE = 3;
+    CHATWRAPPERMESSAGETYPE_CONNECTION = 4;
+    CHATWRAPPERMESSAGETYPE_START = 5;
+}
+
+message ChatWrapper {
+    ChatWrapperMessageType message_type = 1;
+    oneof real_message {
+        tron.protocol.messages.Error error_message = 2;
+        tron.protocol.messages.Chat chat_message = 3;
+        tron.protocol.messages.Ready ready_message = 4;
+        tron.protocol.messages.Configure configure_message = 5;
+        tron.protocol.messages.Connection connection_message = 6;
+        tron.protocol.messages.Start start_message = 7;
+    }
+}

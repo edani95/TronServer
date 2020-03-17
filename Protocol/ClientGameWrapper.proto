@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "Acknowledge.proto";
+import "Error.proto";
+import "Tick.proto";
+
+package tron.protocol.wrappers.client;
+
+enum GameWrapperMessageType {
+    GAMEWRAPPERMESSAGETYPE_ERROR = 0;
+    GAMEWRAPPERMESSAGETYPE_TICK = 1;
+    GAMEWRAPPERMESSAGETYPE_CONNECTION = 2;
+}
+
+message GameWrapper {
+    GameWrapperMessageType message_type = 1;
+    oneof real_message {
+        tron.protocol.messages.Error error_message = 2;
+        tron.protocol.messages.Tick tick_message = 3;
+        tron.protocol.messages.Connection connection_message = 4;
+    }
+}
