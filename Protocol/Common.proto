@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package tron.protocol.common;
+package tron.protocol.messages.common;
 
 enum Privacy {
     PRIVACY_PUBLIC = 0;

@@ -5,6 +5,6 @@ import "Common.proto";
 package tron.protocol.messages;
 
 message Connection {
-    tron.protocol.common.Player player = 1;
-    tron.protocol.common.ConnectState action = 2;
+    tron.protocol.messages.common.Player player = 1;
+    tron.protocol.messages.common.ConnectState action = 2;
 }

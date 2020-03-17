@@ -5,5 +5,5 @@ import "Common.proto";
 package tron.protocol.messages;
 
 message Start {
-    repeated tron.protocol.common.PlayerPosition player_positions = 1;
+    repeated tron.protocol.messages.common.PlayerPosition player_positions = 1;
 }
