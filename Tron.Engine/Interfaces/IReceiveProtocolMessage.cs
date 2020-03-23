@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
+using Tron.Engine.Common;
 using Tron.Engine.Messages;
 using Tron.Engine.Messages.Base;
 
@@ -9,10 +9,10 @@ namespace Tron.Engine.Interfaces
 {
     public interface IReceiveProtocolMessage
     {
-        bool AcceptNewPlayer(ConnectRequestMessage connectRequestMessage, out ConnectResponseMessage responseMessage);
+        bool TryAcceptNewPlayer(ConnectRequestMessage connectRequestMessage, out ConnectResponseMessage responseMessage);
 
         void ReceiveMessageFromPlayer(IReceivableMessage receivableMessage);
 
-        void DisconnectPlayer(Color playerId);
+        void DisconnectPlayer(PlayerId playerId);
     }
 }

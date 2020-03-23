@@ -2,6 +2,7 @@
 using System.Collections.Generic;
  using System.Drawing;
 using System.Text;
+using Tron.Engine.Common;
 using Tron.Engine.Interfaces;
 using Tron.Engine.Messages;
 using Tron.Engine.Messages.Base;
@@ -19,12 +20,12 @@ namespace Tron.Engine
             this.protocolCommunicator.GameEngine = this;
         }
 
-        public bool AcceptNewPlayer(ConnectRequestMessage connectRequestMessage, out ConnectResponseMessage responseMessage)
+        public bool TryAcceptNewPlayer(ConnectRequestMessage connectRequestMessage, out ConnectResponseMessage responseMessage)
         {
             throw new NotImplementedException();
         }
 
-        public void DisconnectPlayer(Color playerId)
+        public void DisconnectPlayer(PlayerId playerId)
         {
             throw new NotImplementedException();
         }
