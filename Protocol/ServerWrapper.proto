@@ -2,21 +2,24 @@ syntax = "proto3";
 
 import "Chat.proto";
 import "Configure.proto";
+import "Event.proto";
 import "Ready.proto";
 
 package tron.protocol.wrappers.server;
 
-enum ChatServerWrapperMessageType {
-    CHATWRAPPERMESSAGETYPE_CHAT = 0;
-    CHATWRAPPERMESSAGETYPE_READY = 1;
-    CHATWRAPPERMESSAGETYPE_CONFIGURE = 2;
+enum ServerWrapperMessageType {
+    WRAPPERMESSAGETYPE_CHAT = 0;
+    WRAPPERMESSAGETYPE_READY = 1;
+    WRAPPERMESSAGETYPE_CONFIGURE = 2;
+    WRAPPERMESSAGETYPE_PLAYER_EVENT = 3;
 }
 
 message ChatServerWrapper {
-    ChatServerWrapperMessageType message_type = 1;
+    ServerWrapperMessageType message_type = 1;
     oneof real_message {
         tron.protocol.messages.Chat chat_message = 2;
         tron.protocol.messages.Ready ready_message = 3;
         tron.protocol.messages.Configure configure_message = 4;
+        tron.protocol.messages.PlayerEvent player_event_message = 5;
     }
 }
