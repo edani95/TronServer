@@ -9,7 +9,7 @@ namespace Tron.Engine.Interfaces
 {
     public interface IReceiveProtocolMessage
     {
-        void AcceptNewPlayer(ConnectRequestMessage connectRequestMessage);
+        bool AcceptNewPlayer(ConnectRequestMessage connectRequestMessage, out ConnectResponseMessage responseMessage);
 
         void ReceiveMessageFromPlayer(IReceivableMessage receivableMessage);
 

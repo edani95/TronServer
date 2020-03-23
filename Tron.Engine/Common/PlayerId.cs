@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Tron.Engine.Common
 {
-    public class BasePlayer
+    public class PlayerId
     {
-        public Color PlayerId { get; set; }
+        public string LobbyId { get; set; }
 
-        public string Name { get; set; }
+        public Color Id { get; set; }
     }
 }

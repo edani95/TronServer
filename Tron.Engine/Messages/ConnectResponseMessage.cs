@@ -11,7 +11,7 @@ namespace Tron.Engine.Messages
     {
         public Color PlayerId { get; set; }
 
-        public ICollection<BasePlayer> Players { get; set; }
+        public ICollection<PlayerId> Players { get; set; }
 
         public string LobbyIdentifier { get; set; }
 

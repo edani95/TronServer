@@ -9,7 +9,7 @@ namespace Tron.Engine.Messages
 {
     public class ConnectionStatusMessage
     {
-        public Color PlayerId { get; set; }
+        public ExtendedPlayerId PlayerId { get; set; }
 
         public ConnectStatus Action { get; set; }
     }

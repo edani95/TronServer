@@ -6,5 +6,7 @@ namespace Tron.Engine.Common
 {
     public enum ConnectStatus
     {
+        Connected,
+        Disconnected
     }
 }
