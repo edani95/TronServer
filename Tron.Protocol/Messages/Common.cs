@@ -25,32 +25,32 @@ namespace Tron.Protocol.Messages.Common {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgxDb21tb24ucHJvdG8SHXRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9u",
-            "IhQKBUNvbG9yEgsKA3JnYhgBIAEoCSJaCgZQbGF5ZXISDAoEbmFtZRgBIAEo",
+            "IhQKBUNvbG9yEgsKA3JnYhgBIAEoCSJdCgZQbGF5ZXISDAoEbmFtZRgBIAEo",
             "CRIzCgVjb2xvchgCIAEoCzIkLnRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29t",
-            "bW9uLkNvbG9yEg0KBXJlYWR5GAMgASgIIogBCghQb3NpdGlvbhITCgtwb3Np",
-            "dGlvbl9pZBgBIAEoBRIUCgxjb29yZGluYXRlX3gYAiABKAUSFAoMY29vcmRp",
-            "bmF0ZV95GAMgASgFEjsKCWRpcmVjdGlvbhgEIAEoDjIoLnRyb24ucHJvdG9j",
-            "b2wubWVzc2FnZXMuY29tbW9uLkRpcmVjdGlvbiKMAQoHU2V0dGluZxINCgV3",
-            "aWR0aBgBIAEoBRIOCgZoZWlnaHQYAiABKAUSDQoFc3BlZWQYAyABKAUSEQoJ",
-            "Y291bnRkb3duGAQgASgFEkAKD3N0YXJ0X3Bvc2l0aW9ucxgFIAMoCzInLnRy",
-            "b24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9uLlBvc2l0aW9uIloKDlBsYXll",
-            "clBvc2l0aW9uEjMKBWNvbG9yGAEgASgLMiQudHJvbi5wcm90b2NvbC5tZXNz",
-            "YWdlcy5jb21tb24uQ29sb3ISEwoLcG9zaXRpb25faWQYAiABKAUiiAEKBkNo",
-            "YW5nZRIzCgVjb2xvchgBIAEoCzIkLnRyb24ucHJvdG9jb2wubWVzc2FnZXMu",
-            "Y29tbW9uLkNvbG9yEjsKCWRpcmVjdGlvbhgCIAEoDjIoLnRyb24ucHJvdG9j",
-            "b2wubWVzc2FnZXMuY29tbW9uLkRpcmVjdGlvbhIMCgRkZWFkGAMgASgIKjIK",
-            "B1ByaXZhY3kSEgoOUFJJVkFDWV9QVUJMSUMQABITCg9QUklWQUNZX1BSSVZB",
-            "VEUQASpaCglEaXJlY3Rpb24SEAoMRElSRUNUSU9OX1VQEAASEgoORElSRUNU",
-            "SU9OX0RPV04QARISCg5ESVJFQ1RJT05fTEVGVBACEhMKD0RJUkVDVElPTl9S",
-            "SUdIVBADKkUKDENvbm5lY3RTdGF0ZRIYChRDT05ORUNUU1RBVEVfQ09OTkVD",
-            "VBAAEhsKF0NPTk5FQ1RTVEFURV9ESVNDT05ORUNUEAEqRAoJRXJyb3JDb2Rl",
-            "EhQKEEVSUk9SQ09ERVNfT1RIRVIQABIhCh1FUlJPUkNPREVTX05PVF9FWElT",
-            "VElOR19MT0JCWRABYgZwcm90bzM="));
+            "bW9uLkNvbG9yEhAKCGlzX3JlYWR5GAMgASgIIogBCghQb3NpdGlvbhITCgtw",
+            "b3NpdGlvbl9pZBgBIAEoBRIUCgxjb29yZGluYXRlX3gYAiABKAUSFAoMY29v",
+            "cmRpbmF0ZV95GAMgASgFEjsKCWRpcmVjdGlvbhgEIAEoDjIoLnRyb24ucHJv",
+            "dG9jb2wubWVzc2FnZXMuY29tbW9uLkRpcmVjdGlvbiKMAQoHU2V0dGluZxIN",
+            "CgV3aWR0aBgBIAEoBRIOCgZoZWlnaHQYAiABKAUSDQoFc3BlZWQYAyABKAUS",
+            "EQoJY291bnRkb3duGAQgASgFEkAKD3N0YXJ0X3Bvc2l0aW9ucxgFIAMoCzIn",
+            "LnRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9uLlBvc2l0aW9uIloKDlBs",
+            "YXllclBvc2l0aW9uEjMKBWNvbG9yGAEgASgLMiQudHJvbi5wcm90b2NvbC5t",
+            "ZXNzYWdlcy5jb21tb24uQ29sb3ISEwoLcG9zaXRpb25faWQYAiABKAUiiAEK",
+            "BkNoYW5nZRIzCgVjb2xvchgBIAEoCzIkLnRyb24ucHJvdG9jb2wubWVzc2Fn",
+            "ZXMuY29tbW9uLkNvbG9yEjsKCWRpcmVjdGlvbhgCIAEoDjIoLnRyb24ucHJv",
+            "dG9jb2wubWVzc2FnZXMuY29tbW9uLkRpcmVjdGlvbhIMCgRkZWFkGAMgASgI",
+            "KjIKB1ByaXZhY3kSEgoOUFJJVkFDWV9QVUJMSUMQABITCg9QUklWQUNZX1BS",
+            "SVZBVEUQASpaCglEaXJlY3Rpb24SEAoMRElSRUNUSU9OX1VQEAASEgoORElS",
+            "RUNUSU9OX0RPV04QARISCg5ESVJFQ1RJT05fTEVGVBACEhMKD0RJUkVDVElP",
+            "Tl9SSUdIVBADKkUKDENvbm5lY3RTdGF0ZRIYChRDT05ORUNUU1RBVEVfQ09O",
+            "TkVDVBAAEhsKF0NPTk5FQ1RTVEFURV9ESVNDT05ORUNUEAEqRAoJRXJyb3JD",
+            "b2RlEhQKEEVSUk9SQ09ERVNfT1RIRVIQABIhCh1FUlJPUkNPREVTX05PVF9F",
+            "WElTVElOR19MT0JCWRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tron.Protocol.Messages.Common.Privacy), typeof(global::Tron.Protocol.Messages.Common.Direction), typeof(global::Tron.Protocol.Messages.Common.ConnectState), typeof(global::Tron.Protocol.Messages.Common.ErrorCode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Color), global::Tron.Protocol.Messages.Common.Color.Parser, new[]{ "Rgb" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Player), global::Tron.Protocol.Messages.Common.Player.Parser, new[]{ "Name", "Color", "Ready" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Player), global::Tron.Protocol.Messages.Common.Player.Parser, new[]{ "Name", "Color", "IsReady" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Position), global::Tron.Protocol.Messages.Common.Position.Parser, new[]{ "PositionId", "CoordinateX", "CoordinateY", "Direction" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Setting), global::Tron.Protocol.Messages.Common.Setting.Parser, new[]{ "Width", "Height", "Speed", "Countdown", "StartPositions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.PlayerPosition), global::Tron.Protocol.Messages.Common.PlayerPosition.Parser, new[]{ "Color", "PositionId" }, null, null, null, null),
@@ -245,7 +245,7 @@ namespace Tron.Protocol.Messages.Common {
     public Player(Player other) : this() {
       name_ = other.name_;
       color_ = other.color_ != null ? other.color_.Clone() : null;
-      ready_ = other.ready_;
+      isReady_ = other.isReady_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -276,14 +276,14 @@ namespace Tron.Protocol.Messages.Common {
       }
     }
 
-    /// <summary>Field number for the "ready" field.</summary>
-    public const int ReadyFieldNumber = 3;
-    private bool ready_;
+    /// <summary>Field number for the "is_ready" field.</summary>
+    public const int IsReadyFieldNumber = 3;
+    private bool isReady_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Ready {
-      get { return ready_; }
+    public bool IsReady {
+      get { return isReady_; }
       set {
-        ready_ = value;
+        isReady_ = value;
       }
     }
 
@@ -302,7 +302,7 @@ namespace Tron.Protocol.Messages.Common {
       }
       if (Name != other.Name) return false;
       if (!object.Equals(Color, other.Color)) return false;
-      if (Ready != other.Ready) return false;
+      if (IsReady != other.IsReady) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -311,7 +311,7 @@ namespace Tron.Protocol.Messages.Common {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (color_ != null) hash ^= Color.GetHashCode();
-      if (Ready != false) hash ^= Ready.GetHashCode();
+      if (IsReady != false) hash ^= IsReady.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -333,9 +333,9 @@ namespace Tron.Protocol.Messages.Common {
         output.WriteRawTag(18);
         output.WriteMessage(Color);
       }
-      if (Ready != false) {
+      if (IsReady != false) {
         output.WriteRawTag(24);
-        output.WriteBool(Ready);
+        output.WriteBool(IsReady);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -351,7 +351,7 @@ namespace Tron.Protocol.Messages.Common {
       if (color_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Color);
       }
-      if (Ready != false) {
+      if (IsReady != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -374,8 +374,8 @@ namespace Tron.Protocol.Messages.Common {
         }
         Color.MergeFrom(other.Color);
       }
-      if (other.Ready != false) {
-        Ready = other.Ready;
+      if (other.IsReady != false) {
+        IsReady = other.IsReady;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -400,7 +400,7 @@ namespace Tron.Protocol.Messages.Common {
             break;
           }
           case 24: {
-            Ready = input.ReadBool();
+            IsReady = input.ReadBool();
             break;
           }
         }
