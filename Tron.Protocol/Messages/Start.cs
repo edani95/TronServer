@@ -25,10 +25,11 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgtTdGFydC5wcm90bxIWdHJvbi5wcm90b2NvbC5tZXNzYWdlcxoMQ29tbW9u",
-            "LnByb3RvIkcKBVN0YXJ0Ej4KEHBsYXllcl9wb3NpdGlvbnMYASADKAsyJC50",
-            "cm9uLnByb3RvY29sLmNvbW1vbi5QbGF5ZXJQb3NpdGlvbmIGcHJvdG8z"));
+            "LnByb3RvIlAKBVN0YXJ0EkcKEHBsYXllcl9wb3NpdGlvbnMYASADKAsyLS50",
+            "cm9uLnByb3RvY29sLm1lc3NhZ2VzLmNvbW1vbi5QbGF5ZXJQb3NpdGlvbmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Start), global::Tron.Protocol.Messages.Start.Parser, new[]{ "PlayerPositions" }, null, null, null, null)
           }));
@@ -73,11 +74,11 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "player_positions" field.</summary>
     public const int PlayerPositionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Tron.Protocol.Common.PlayerPosition> _repeated_playerPositions_codec
-        = pb::FieldCodec.ForMessage(10, global::Tron.Protocol.Common.PlayerPosition.Parser);
-    private readonly pbc::RepeatedField<global::Tron.Protocol.Common.PlayerPosition> playerPositions_ = new pbc::RepeatedField<global::Tron.Protocol.Common.PlayerPosition>();
+    private static readonly pb::FieldCodec<global::Tron.Protocol.Messages.Common.PlayerPosition> _repeated_playerPositions_codec
+        = pb::FieldCodec.ForMessage(10, global::Tron.Protocol.Messages.Common.PlayerPosition.Parser);
+    private readonly pbc::RepeatedField<global::Tron.Protocol.Messages.Common.PlayerPosition> playerPositions_ = new pbc::RepeatedField<global::Tron.Protocol.Messages.Common.PlayerPosition>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Tron.Protocol.Common.PlayerPosition> PlayerPositions {
+    public pbc::RepeatedField<global::Tron.Protocol.Messages.Common.PlayerPosition> PlayerPositions {
       get { return playerPositions_; }
     }
 

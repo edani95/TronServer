@@ -25,11 +25,12 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFBY2tub3dsZWRnZS5wcm90bxIWdHJvbi5wcm90b2NvbC5tZXNzYWdlcxoM",
-            "Q29tbW9uLnByb3RvIm4KCkNvbm5lY3Rpb24SLAoGcGxheWVyGAEgASgLMhwu",
-            "dHJvbi5wcm90b2NvbC5jb21tb24uUGxheWVyEjIKBmFjdGlvbhgCIAEoDjIi",
-            "LnRyb24ucHJvdG9jb2wuY29tbW9uLkNvbm5lY3RTdGF0ZWIGcHJvdG8z"));
+            "Q29tbW9uLnByb3RvIoABCgpDb25uZWN0aW9uEjUKBnBsYXllchgBIAEoCzIl",
+            "LnRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9uLlBsYXllchI7CgZhY3Rp",
+            "b24YAiABKA4yKy50cm9uLnByb3RvY29sLm1lc3NhZ2VzLmNvbW1vbi5Db25u",
+            "ZWN0U3RhdGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Connection), global::Tron.Protocol.Messages.Connection.Parser, new[]{ "Player", "Action" }, null, null, null, null)
           }));
@@ -75,9 +76,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "player" field.</summary>
     public const int PlayerFieldNumber = 1;
-    private global::Tron.Protocol.Common.Player player_;
+    private global::Tron.Protocol.Messages.Common.Player player_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Player Player {
+    public global::Tron.Protocol.Messages.Common.Player Player {
       get { return player_; }
       set {
         player_ = value;
@@ -86,9 +87,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "action" field.</summary>
     public const int ActionFieldNumber = 2;
-    private global::Tron.Protocol.Common.ConnectState action_ = global::Tron.Protocol.Common.ConnectState.Connect;
+    private global::Tron.Protocol.Messages.Common.ConnectState action_ = global::Tron.Protocol.Messages.Common.ConnectState.Connect;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.ConnectState Action {
+    public global::Tron.Protocol.Messages.Common.ConnectState Action {
       get { return action_; }
       set {
         action_ = value;
@@ -117,7 +118,7 @@ namespace Tron.Protocol.Messages {
     public override int GetHashCode() {
       int hash = 1;
       if (player_ != null) hash ^= Player.GetHashCode();
-      if (Action != global::Tron.Protocol.Common.ConnectState.Connect) hash ^= Action.GetHashCode();
+      if (Action != global::Tron.Protocol.Messages.Common.ConnectState.Connect) hash ^= Action.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -135,7 +136,7 @@ namespace Tron.Protocol.Messages {
         output.WriteRawTag(10);
         output.WriteMessage(Player);
       }
-      if (Action != global::Tron.Protocol.Common.ConnectState.Connect) {
+      if (Action != global::Tron.Protocol.Messages.Common.ConnectState.Connect) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Action);
       }
@@ -150,7 +151,7 @@ namespace Tron.Protocol.Messages {
       if (player_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player);
       }
-      if (Action != global::Tron.Protocol.Common.ConnectState.Connect) {
+      if (Action != global::Tron.Protocol.Messages.Common.ConnectState.Connect) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Action);
       }
       if (_unknownFields != null) {
@@ -166,11 +167,11 @@ namespace Tron.Protocol.Messages {
       }
       if (other.player_ != null) {
         if (player_ == null) {
-          Player = new global::Tron.Protocol.Common.Player();
+          Player = new global::Tron.Protocol.Messages.Common.Player();
         }
         Player.MergeFrom(other.Player);
       }
-      if (other.Action != global::Tron.Protocol.Common.ConnectState.Connect) {
+      if (other.Action != global::Tron.Protocol.Messages.Common.ConnectState.Connect) {
         Action = other.Action;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -186,13 +187,13 @@ namespace Tron.Protocol.Messages {
             break;
           case 10: {
             if (player_ == null) {
-              Player = new global::Tron.Protocol.Common.Player();
+              Player = new global::Tron.Protocol.Messages.Common.Player();
             }
             input.ReadMessage(Player);
             break;
           }
           case 16: {
-            Action = (global::Tron.Protocol.Common.ConnectState) input.ReadEnum();
+            Action = (global::Tron.Protocol.Messages.Common.ConnectState) input.ReadEnum();
             break;
           }
         }

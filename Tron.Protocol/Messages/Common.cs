@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Tron.Protocol.Common {
+namespace Tron.Protocol.Messages.Common {
 
   /// <summary>Holder for reflection information generated from Common.proto</summary>
   public static partial class CommonReflection {
@@ -24,35 +24,37 @@ namespace Tron.Protocol.Common {
     static CommonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxDb21tb24ucHJvdG8SFHRyb24ucHJvdG9jb2wuY29tbW9uIhQKBUNvbG9y",
-            "EgsKA3JnYhgBIAEoCSJRCgZQbGF5ZXISDAoEbmFtZRgBIAEoCRIqCgVjb2xv",
-            "chgCIAEoCzIbLnRyb24ucHJvdG9jb2wuY29tbW9uLkNvbG9yEg0KBXJlYWR5",
-            "GAMgASgIIn8KCFBvc2l0aW9uEhMKC3Bvc2l0aW9uX2lkGAEgASgFEhQKDGNv",
-            "b3JkaW5hdGVfeBgCIAEoBRIUCgxjb29yZGluYXRlX3kYAyABKAUSMgoJZGly",
-            "ZWN0aW9uGAQgASgOMh8udHJvbi5wcm90b2NvbC5jb21tb24uRGlyZWN0aW9u",
-            "IoMBCgdTZXR0aW5nEg0KBXdpZHRoGAEgASgFEg4KBmhlaWdodBgCIAEoBRIN",
-            "CgVzcGVlZBgDIAEoBRIRCgljb3VudGRvd24YBCABKAUSNwoPc3RhcnRfcG9z",
-            "aXRpb25zGAUgAygLMh4udHJvbi5wcm90b2NvbC5jb21tb24uUG9zaXRpb24i",
-            "UQoOUGxheWVyUG9zaXRpb24SKgoFY29sb3IYASABKAsyGy50cm9uLnByb3Rv",
-            "Y29sLmNvbW1vbi5Db2xvchITCgtwb3NpdGlvbl9pZBgCIAEoBSJ2CgZDaGFu",
-            "Z2USKgoFY29sb3IYASABKAsyGy50cm9uLnByb3RvY29sLmNvbW1vbi5Db2xv",
-            "chIyCglkaXJlY3Rpb24YAiABKA4yHy50cm9uLnByb3RvY29sLmNvbW1vbi5E",
-            "aXJlY3Rpb24SDAoEZGVhZBgDIAEoCCoyCgdQcml2YWN5EhIKDlBSSVZBQ1lf",
-            "UFVCTElDEAASEwoPUFJJVkFDWV9QUklWQVRFEAEqWgoJRGlyZWN0aW9uEhAK",
-            "DERJUkVDVElPTl9VUBAAEhIKDkRJUkVDVElPTl9ET1dOEAESEgoORElSRUNU",
-            "SU9OX0xFRlQQAhITCg9ESVJFQ1RJT05fUklHSFQQAypFCgxDb25uZWN0U3Rh",
-            "dGUSGAoUQ09OTkVDVFNUQVRFX0NPTk5FQ1QQABIbChdDT05ORUNUU1RBVEVf",
-            "RElTQ09OTkVDVBABKkQKCUVycm9yQ29kZRIUChBFUlJPUkNPREVTX09USEVS",
-            "EAASIQodRVJST1JDT0RFU19OT1RfRVhJU1RJTkdfTE9CQlkQAWIGcHJvdG8z"));
+            "CgxDb21tb24ucHJvdG8SHXRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9u",
+            "IhQKBUNvbG9yEgsKA3JnYhgBIAEoCSJaCgZQbGF5ZXISDAoEbmFtZRgBIAEo",
+            "CRIzCgVjb2xvchgCIAEoCzIkLnRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29t",
+            "bW9uLkNvbG9yEg0KBXJlYWR5GAMgASgIIogBCghQb3NpdGlvbhITCgtwb3Np",
+            "dGlvbl9pZBgBIAEoBRIUCgxjb29yZGluYXRlX3gYAiABKAUSFAoMY29vcmRp",
+            "bmF0ZV95GAMgASgFEjsKCWRpcmVjdGlvbhgEIAEoDjIoLnRyb24ucHJvdG9j",
+            "b2wubWVzc2FnZXMuY29tbW9uLkRpcmVjdGlvbiKMAQoHU2V0dGluZxINCgV3",
+            "aWR0aBgBIAEoBRIOCgZoZWlnaHQYAiABKAUSDQoFc3BlZWQYAyABKAUSEQoJ",
+            "Y291bnRkb3duGAQgASgFEkAKD3N0YXJ0X3Bvc2l0aW9ucxgFIAMoCzInLnRy",
+            "b24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9uLlBvc2l0aW9uIloKDlBsYXll",
+            "clBvc2l0aW9uEjMKBWNvbG9yGAEgASgLMiQudHJvbi5wcm90b2NvbC5tZXNz",
+            "YWdlcy5jb21tb24uQ29sb3ISEwoLcG9zaXRpb25faWQYAiABKAUiiAEKBkNo",
+            "YW5nZRIzCgVjb2xvchgBIAEoCzIkLnRyb24ucHJvdG9jb2wubWVzc2FnZXMu",
+            "Y29tbW9uLkNvbG9yEjsKCWRpcmVjdGlvbhgCIAEoDjIoLnRyb24ucHJvdG9j",
+            "b2wubWVzc2FnZXMuY29tbW9uLkRpcmVjdGlvbhIMCgRkZWFkGAMgASgIKjIK",
+            "B1ByaXZhY3kSEgoOUFJJVkFDWV9QVUJMSUMQABITCg9QUklWQUNZX1BSSVZB",
+            "VEUQASpaCglEaXJlY3Rpb24SEAoMRElSRUNUSU9OX1VQEAASEgoORElSRUNU",
+            "SU9OX0RPV04QARISCg5ESVJFQ1RJT05fTEVGVBACEhMKD0RJUkVDVElPTl9S",
+            "SUdIVBADKkUKDENvbm5lY3RTdGF0ZRIYChRDT05ORUNUU1RBVEVfQ09OTkVD",
+            "VBAAEhsKF0NPTk5FQ1RTVEFURV9ESVNDT05ORUNUEAEqRAoJRXJyb3JDb2Rl",
+            "EhQKEEVSUk9SQ09ERVNfT1RIRVIQABIhCh1FUlJPUkNPREVTX05PVF9FWElT",
+            "VElOR19MT0JCWRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tron.Protocol.Common.Privacy), typeof(global::Tron.Protocol.Common.Direction), typeof(global::Tron.Protocol.Common.ConnectState), typeof(global::Tron.Protocol.Common.ErrorCode), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Common.Color), global::Tron.Protocol.Common.Color.Parser, new[]{ "Rgb" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Common.Player), global::Tron.Protocol.Common.Player.Parser, new[]{ "Name", "Color", "Ready" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Common.Position), global::Tron.Protocol.Common.Position.Parser, new[]{ "PositionId", "CoordinateX", "CoordinateY", "Direction" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Common.Setting), global::Tron.Protocol.Common.Setting.Parser, new[]{ "Width", "Height", "Speed", "Countdown", "StartPositions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Common.PlayerPosition), global::Tron.Protocol.Common.PlayerPosition.Parser, new[]{ "Color", "PositionId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Common.Change), global::Tron.Protocol.Common.Change.Parser, new[]{ "Color", "Direction", "Dead" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tron.Protocol.Messages.Common.Privacy), typeof(global::Tron.Protocol.Messages.Common.Direction), typeof(global::Tron.Protocol.Messages.Common.ConnectState), typeof(global::Tron.Protocol.Messages.Common.ErrorCode), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Color), global::Tron.Protocol.Messages.Common.Color.Parser, new[]{ "Rgb" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Player), global::Tron.Protocol.Messages.Common.Player.Parser, new[]{ "Name", "Color", "Ready" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Position), global::Tron.Protocol.Messages.Common.Position.Parser, new[]{ "PositionId", "CoordinateX", "CoordinateY", "Direction" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Setting), global::Tron.Protocol.Messages.Common.Setting.Parser, new[]{ "Width", "Height", "Speed", "Countdown", "StartPositions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.PlayerPosition), global::Tron.Protocol.Messages.Common.PlayerPosition.Parser, new[]{ "Color", "PositionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Common.Change), global::Tron.Protocol.Messages.Common.Change.Parser, new[]{ "Color", "Direction", "Dead" }, null, null, null, null)
           }));
     }
     #endregion
@@ -95,7 +97,7 @@ namespace Tron.Protocol.Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tron.Protocol.Common.CommonReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -224,7 +226,7 @@ namespace Tron.Protocol.Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tron.Protocol.Common.CommonReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -265,9 +267,9 @@ namespace Tron.Protocol.Common {
 
     /// <summary>Field number for the "color" field.</summary>
     public const int ColorFieldNumber = 2;
-    private global::Tron.Protocol.Common.Color color_;
+    private global::Tron.Protocol.Messages.Common.Color color_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Color Color {
+    public global::Tron.Protocol.Messages.Common.Color Color {
       get { return color_; }
       set {
         color_ = value;
@@ -368,7 +370,7 @@ namespace Tron.Protocol.Common {
       }
       if (other.color_ != null) {
         if (color_ == null) {
-          Color = new global::Tron.Protocol.Common.Color();
+          Color = new global::Tron.Protocol.Messages.Common.Color();
         }
         Color.MergeFrom(other.Color);
       }
@@ -392,7 +394,7 @@ namespace Tron.Protocol.Common {
           }
           case 18: {
             if (color_ == null) {
-              Color = new global::Tron.Protocol.Common.Color();
+              Color = new global::Tron.Protocol.Messages.Common.Color();
             }
             input.ReadMessage(Color);
             break;
@@ -415,7 +417,7 @@ namespace Tron.Protocol.Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tron.Protocol.Common.CommonReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -479,9 +481,9 @@ namespace Tron.Protocol.Common {
 
     /// <summary>Field number for the "direction" field.</summary>
     public const int DirectionFieldNumber = 4;
-    private global::Tron.Protocol.Common.Direction direction_ = global::Tron.Protocol.Common.Direction.Up;
+    private global::Tron.Protocol.Messages.Common.Direction direction_ = global::Tron.Protocol.Messages.Common.Direction.Up;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Direction Direction {
+    public global::Tron.Protocol.Messages.Common.Direction Direction {
       get { return direction_; }
       set {
         direction_ = value;
@@ -514,7 +516,7 @@ namespace Tron.Protocol.Common {
       if (PositionId != 0) hash ^= PositionId.GetHashCode();
       if (CoordinateX != 0) hash ^= CoordinateX.GetHashCode();
       if (CoordinateY != 0) hash ^= CoordinateY.GetHashCode();
-      if (Direction != global::Tron.Protocol.Common.Direction.Up) hash ^= Direction.GetHashCode();
+      if (Direction != global::Tron.Protocol.Messages.Common.Direction.Up) hash ^= Direction.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -540,7 +542,7 @@ namespace Tron.Protocol.Common {
         output.WriteRawTag(24);
         output.WriteInt32(CoordinateY);
       }
-      if (Direction != global::Tron.Protocol.Common.Direction.Up) {
+      if (Direction != global::Tron.Protocol.Messages.Common.Direction.Up) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Direction);
       }
@@ -561,7 +563,7 @@ namespace Tron.Protocol.Common {
       if (CoordinateY != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(CoordinateY);
       }
-      if (Direction != global::Tron.Protocol.Common.Direction.Up) {
+      if (Direction != global::Tron.Protocol.Messages.Common.Direction.Up) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Direction);
       }
       if (_unknownFields != null) {
@@ -584,7 +586,7 @@ namespace Tron.Protocol.Common {
       if (other.CoordinateY != 0) {
         CoordinateY = other.CoordinateY;
       }
-      if (other.Direction != global::Tron.Protocol.Common.Direction.Up) {
+      if (other.Direction != global::Tron.Protocol.Messages.Common.Direction.Up) {
         Direction = other.Direction;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -611,7 +613,7 @@ namespace Tron.Protocol.Common {
             break;
           }
           case 32: {
-            Direction = (global::Tron.Protocol.Common.Direction) input.ReadEnum();
+            Direction = (global::Tron.Protocol.Messages.Common.Direction) input.ReadEnum();
             break;
           }
         }
@@ -628,7 +630,7 @@ namespace Tron.Protocol.Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tron.Protocol.Common.CommonReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -704,11 +706,11 @@ namespace Tron.Protocol.Common {
 
     /// <summary>Field number for the "start_positions" field.</summary>
     public const int StartPositionsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Tron.Protocol.Common.Position> _repeated_startPositions_codec
-        = pb::FieldCodec.ForMessage(42, global::Tron.Protocol.Common.Position.Parser);
-    private readonly pbc::RepeatedField<global::Tron.Protocol.Common.Position> startPositions_ = new pbc::RepeatedField<global::Tron.Protocol.Common.Position>();
+    private static readonly pb::FieldCodec<global::Tron.Protocol.Messages.Common.Position> _repeated_startPositions_codec
+        = pb::FieldCodec.ForMessage(42, global::Tron.Protocol.Messages.Common.Position.Parser);
+    private readonly pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Position> startPositions_ = new pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Position>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Tron.Protocol.Common.Position> StartPositions {
+    public pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Position> StartPositions {
       get { return startPositions_; }
     }
 
@@ -861,7 +863,7 @@ namespace Tron.Protocol.Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tron.Protocol.Common.CommonReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -890,9 +892,9 @@ namespace Tron.Protocol.Common {
 
     /// <summary>Field number for the "color" field.</summary>
     public const int ColorFieldNumber = 1;
-    private global::Tron.Protocol.Common.Color color_;
+    private global::Tron.Protocol.Messages.Common.Color color_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Color Color {
+    public global::Tron.Protocol.Messages.Common.Color Color {
       get { return color_; }
       set {
         color_ = value;
@@ -981,7 +983,7 @@ namespace Tron.Protocol.Common {
       }
       if (other.color_ != null) {
         if (color_ == null) {
-          Color = new global::Tron.Protocol.Common.Color();
+          Color = new global::Tron.Protocol.Messages.Common.Color();
         }
         Color.MergeFrom(other.Color);
       }
@@ -1001,7 +1003,7 @@ namespace Tron.Protocol.Common {
             break;
           case 10: {
             if (color_ == null) {
-              Color = new global::Tron.Protocol.Common.Color();
+              Color = new global::Tron.Protocol.Messages.Common.Color();
             }
             input.ReadMessage(Color);
             break;
@@ -1024,7 +1026,7 @@ namespace Tron.Protocol.Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tron.Protocol.Common.CommonReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1054,9 +1056,9 @@ namespace Tron.Protocol.Common {
 
     /// <summary>Field number for the "color" field.</summary>
     public const int ColorFieldNumber = 1;
-    private global::Tron.Protocol.Common.Color color_;
+    private global::Tron.Protocol.Messages.Common.Color color_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Color Color {
+    public global::Tron.Protocol.Messages.Common.Color Color {
       get { return color_; }
       set {
         color_ = value;
@@ -1065,9 +1067,9 @@ namespace Tron.Protocol.Common {
 
     /// <summary>Field number for the "direction" field.</summary>
     public const int DirectionFieldNumber = 2;
-    private global::Tron.Protocol.Common.Direction direction_ = global::Tron.Protocol.Common.Direction.Up;
+    private global::Tron.Protocol.Messages.Common.Direction direction_ = global::Tron.Protocol.Messages.Common.Direction.Up;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Direction Direction {
+    public global::Tron.Protocol.Messages.Common.Direction Direction {
       get { return direction_; }
       set {
         direction_ = value;
@@ -1108,7 +1110,7 @@ namespace Tron.Protocol.Common {
     public override int GetHashCode() {
       int hash = 1;
       if (color_ != null) hash ^= Color.GetHashCode();
-      if (Direction != global::Tron.Protocol.Common.Direction.Up) hash ^= Direction.GetHashCode();
+      if (Direction != global::Tron.Protocol.Messages.Common.Direction.Up) hash ^= Direction.GetHashCode();
       if (Dead != false) hash ^= Dead.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1127,7 +1129,7 @@ namespace Tron.Protocol.Common {
         output.WriteRawTag(10);
         output.WriteMessage(Color);
       }
-      if (Direction != global::Tron.Protocol.Common.Direction.Up) {
+      if (Direction != global::Tron.Protocol.Messages.Common.Direction.Up) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Direction);
       }
@@ -1146,7 +1148,7 @@ namespace Tron.Protocol.Common {
       if (color_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Color);
       }
-      if (Direction != global::Tron.Protocol.Common.Direction.Up) {
+      if (Direction != global::Tron.Protocol.Messages.Common.Direction.Up) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Direction);
       }
       if (Dead != false) {
@@ -1165,11 +1167,11 @@ namespace Tron.Protocol.Common {
       }
       if (other.color_ != null) {
         if (color_ == null) {
-          Color = new global::Tron.Protocol.Common.Color();
+          Color = new global::Tron.Protocol.Messages.Common.Color();
         }
         Color.MergeFrom(other.Color);
       }
-      if (other.Direction != global::Tron.Protocol.Common.Direction.Up) {
+      if (other.Direction != global::Tron.Protocol.Messages.Common.Direction.Up) {
         Direction = other.Direction;
       }
       if (other.Dead != false) {
@@ -1188,13 +1190,13 @@ namespace Tron.Protocol.Common {
             break;
           case 10: {
             if (color_ == null) {
-              Color = new global::Tron.Protocol.Common.Color();
+              Color = new global::Tron.Protocol.Messages.Common.Color();
             }
             input.ReadMessage(Color);
             break;
           }
           case 16: {
-            Direction = (global::Tron.Protocol.Common.Direction) input.ReadEnum();
+            Direction = (global::Tron.Protocol.Messages.Common.Direction) input.ReadEnum();
             break;
           }
           case 24: {

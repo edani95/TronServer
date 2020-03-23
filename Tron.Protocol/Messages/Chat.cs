@@ -25,10 +25,11 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgpDaGF0LnByb3RvEhZ0cm9uLnByb3RvY29sLm1lc3NhZ2VzGgxDb21tb24u",
-            "cHJvdG8iQwoEQ2hhdBIqCgVjb2xvchgBIAEoCzIbLnRyb24ucHJvdG9jb2wu",
-            "Y29tbW9uLkNvbG9yEg8KB21lc3NhZ2UYAiABKAliBnByb3RvMw=="));
+            "cHJvdG8iTAoEQ2hhdBIzCgVjb2xvchgBIAEoCzIkLnRyb24ucHJvdG9jb2wu",
+            "bWVzc2FnZXMuY29tbW9uLkNvbG9yEg8KB21lc3NhZ2UYAiABKAliBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Chat), global::Tron.Protocol.Messages.Chat.Parser, new[]{ "Color", "Message" }, null, null, null, null)
           }));
@@ -74,9 +75,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "color" field.</summary>
     public const int ColorFieldNumber = 1;
-    private global::Tron.Protocol.Common.Color color_;
+    private global::Tron.Protocol.Messages.Common.Color color_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Color Color {
+    public global::Tron.Protocol.Messages.Common.Color Color {
       get { return color_; }
       set {
         color_ = value;
@@ -165,7 +166,7 @@ namespace Tron.Protocol.Messages {
       }
       if (other.color_ != null) {
         if (color_ == null) {
-          Color = new global::Tron.Protocol.Common.Color();
+          Color = new global::Tron.Protocol.Messages.Common.Color();
         }
         Color.MergeFrom(other.Color);
       }
@@ -185,7 +186,7 @@ namespace Tron.Protocol.Messages {
             break;
           case 10: {
             if (color_ == null) {
-              Color = new global::Tron.Protocol.Common.Color();
+              Color = new global::Tron.Protocol.Messages.Common.Color();
             }
             input.ReadMessage(Color);
             break;

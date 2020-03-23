@@ -25,11 +25,11 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgpUaWNrLnByb3RvEhZ0cm9uLnByb3RvY29sLm1lc3NhZ2VzGgxDb21tb24u",
-            "cHJvdG8iWwoEVGljaxIRCgljb3VudGRvd24YASABKAUSEQoJbGFzdF90aWNr",
-            "GAIgASgIEi0KB2NoYW5nZXMYAyADKAsyHC50cm9uLnByb3RvY29sLmNvbW1v",
-            "bi5DaGFuZ2ViBnByb3RvMw=="));
+            "cHJvdG8iZAoEVGljaxIRCgljb3VudGRvd24YASABKAUSEQoJbGFzdF90aWNr",
+            "GAIgASgIEjYKB2NoYW5nZXMYAyADKAsyJS50cm9uLnByb3RvY29sLm1lc3Nh",
+            "Z2VzLmNvbW1vbi5DaGFuZ2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Tick), global::Tron.Protocol.Messages.Tick.Parser, new[]{ "Countdown", "LastTick", "Changes" }, null, null, null, null)
           }));
@@ -98,11 +98,11 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "changes" field.</summary>
     public const int ChangesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Tron.Protocol.Common.Change> _repeated_changes_codec
-        = pb::FieldCodec.ForMessage(26, global::Tron.Protocol.Common.Change.Parser);
-    private readonly pbc::RepeatedField<global::Tron.Protocol.Common.Change> changes_ = new pbc::RepeatedField<global::Tron.Protocol.Common.Change>();
+    private static readonly pb::FieldCodec<global::Tron.Protocol.Messages.Common.Change> _repeated_changes_codec
+        = pb::FieldCodec.ForMessage(26, global::Tron.Protocol.Messages.Common.Change.Parser);
+    private readonly pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Change> changes_ = new pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Change>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Tron.Protocol.Common.Change> Changes {
+    public pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Change> Changes {
       get { return changes_; }
     }
 

@@ -25,11 +25,12 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg9Db25maWd1cmUucHJvdG8SFnRyb24ucHJvdG9jb2wubWVzc2FnZXMaDENv",
-            "bW1vbi5wcm90byJoCglDb25maWd1cmUSKgoFY29sb3IYASABKAsyGy50cm9u",
-            "LnByb3RvY29sLmNvbW1vbi5Db2xvchIvCghzZXR0aW5ncxgCIAEoCzIdLnRy",
-            "b24ucHJvdG9jb2wuY29tbW9uLlNldHRpbmdiBnByb3RvMw=="));
+            "bW1vbi5wcm90byJ6CglDb25maWd1cmUSMwoFY29sb3IYASABKAsyJC50cm9u",
+            "LnByb3RvY29sLm1lc3NhZ2VzLmNvbW1vbi5Db2xvchI4CghzZXR0aW5ncxgC",
+            "IAEoCzImLnRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9uLlNldHRpbmdi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Configure), global::Tron.Protocol.Messages.Configure.Parser, new[]{ "Color", "Settings" }, null, null, null, null)
           }));
@@ -75,9 +76,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "color" field.</summary>
     public const int ColorFieldNumber = 1;
-    private global::Tron.Protocol.Common.Color color_;
+    private global::Tron.Protocol.Messages.Common.Color color_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Color Color {
+    public global::Tron.Protocol.Messages.Common.Color Color {
       get { return color_; }
       set {
         color_ = value;
@@ -86,9 +87,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "settings" field.</summary>
     public const int SettingsFieldNumber = 2;
-    private global::Tron.Protocol.Common.Setting settings_;
+    private global::Tron.Protocol.Messages.Common.Setting settings_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Setting Settings {
+    public global::Tron.Protocol.Messages.Common.Setting Settings {
       get { return settings_; }
       set {
         settings_ = value;
@@ -166,13 +167,13 @@ namespace Tron.Protocol.Messages {
       }
       if (other.color_ != null) {
         if (color_ == null) {
-          Color = new global::Tron.Protocol.Common.Color();
+          Color = new global::Tron.Protocol.Messages.Common.Color();
         }
         Color.MergeFrom(other.Color);
       }
       if (other.settings_ != null) {
         if (settings_ == null) {
-          Settings = new global::Tron.Protocol.Common.Setting();
+          Settings = new global::Tron.Protocol.Messages.Common.Setting();
         }
         Settings.MergeFrom(other.Settings);
       }
@@ -189,14 +190,14 @@ namespace Tron.Protocol.Messages {
             break;
           case 10: {
             if (color_ == null) {
-              Color = new global::Tron.Protocol.Common.Color();
+              Color = new global::Tron.Protocol.Messages.Common.Color();
             }
             input.ReadMessage(Color);
             break;
           }
           case 18: {
             if (settings_ == null) {
-              Settings = new global::Tron.Protocol.Common.Setting();
+              Settings = new global::Tron.Protocol.Messages.Common.Setting();
             }
             input.ReadMessage(Settings);
             break;

@@ -25,11 +25,11 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgtFcnJvci5wcm90bxIWdHJvbi5wcm90b2NvbC5tZXNzYWdlcxoMQ29tbW9u",
-            "LnByb3RvIk0KBUVycm9yEjMKCmVycm9yX2NvZGUYASABKA4yHy50cm9uLnBy",
-            "b3RvY29sLmNvbW1vbi5FcnJvckNvZGUSDwoHbWVzc2FnZRgCIAEoCWIGcHJv",
-            "dG8z"));
+            "LnByb3RvIlYKBUVycm9yEjwKCmVycm9yX2NvZGUYASABKA4yKC50cm9uLnBy",
+            "b3RvY29sLm1lc3NhZ2VzLmNvbW1vbi5FcnJvckNvZGUSDwoHbWVzc2FnZRgC",
+            "IAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Error), global::Tron.Protocol.Messages.Error.Parser, new[]{ "ErrorCode", "Message" }, null, null, null, null)
           }));
@@ -75,9 +75,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "error_code" field.</summary>
     public const int ErrorCodeFieldNumber = 1;
-    private global::Tron.Protocol.Common.ErrorCode errorCode_ = global::Tron.Protocol.Common.ErrorCode.SOther;
+    private global::Tron.Protocol.Messages.Common.ErrorCode errorCode_ = global::Tron.Protocol.Messages.Common.ErrorCode.SOther;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.ErrorCode ErrorCode {
+    public global::Tron.Protocol.Messages.Common.ErrorCode ErrorCode {
       get { return errorCode_; }
       set {
         errorCode_ = value;
@@ -116,7 +116,7 @@ namespace Tron.Protocol.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ErrorCode != global::Tron.Protocol.Common.ErrorCode.SOther) hash ^= ErrorCode.GetHashCode();
+      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) hash ^= ErrorCode.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -131,7 +131,7 @@ namespace Tron.Protocol.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ErrorCode != global::Tron.Protocol.Common.ErrorCode.SOther) {
+      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ErrorCode);
       }
@@ -147,7 +147,7 @@ namespace Tron.Protocol.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ErrorCode != global::Tron.Protocol.Common.ErrorCode.SOther) {
+      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrorCode);
       }
       if (Message.Length != 0) {
@@ -164,7 +164,7 @@ namespace Tron.Protocol.Messages {
       if (other == null) {
         return;
       }
-      if (other.ErrorCode != global::Tron.Protocol.Common.ErrorCode.SOther) {
+      if (other.ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) {
         ErrorCode = other.ErrorCode;
       }
       if (other.Message.Length != 0) {
@@ -182,7 +182,7 @@ namespace Tron.Protocol.Messages {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            ErrorCode = (global::Tron.Protocol.Common.ErrorCode) input.ReadEnum();
+            ErrorCode = (global::Tron.Protocol.Messages.Common.ErrorCode) input.ReadEnum();
             break;
           }
           case 18: {

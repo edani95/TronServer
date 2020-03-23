@@ -25,15 +25,16 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg1Db25uZWN0LnByb3RvEhZ0cm9uLnByb3RvY29sLm1lc3NhZ2VzGgxDb21t",
-            "b24ucHJvdG8iZAoHUmVxdWVzdBIMCgRuYW1lGAEgASgJEhsKE2Nvbm5lY3Rp",
-            "b25fZ3JvdXBfaWQYAiABKAkSLgoHcHJpdmFjeRgDIAEoDjIdLnRyb24ucHJv",
-            "dG9jb2wuY29tbW9uLlByaXZhY3kiswEKCFJlc3BvbnNlEioKBWNvbG9yGAEg",
-            "ASgLMhsudHJvbi5wcm90b2NvbC5jb21tb24uQ29sb3ISGwoTY29ubmVjdGlv",
-            "bl9ncm91cF9pZBgCIAEoCRIvCghzZXR0aW5ncxgDIAEoCzIdLnRyb24ucHJv",
-            "dG9jb2wuY29tbW9uLlNldHRpbmcSLQoHcGxheWVycxgEIAMoCzIcLnRyb24u",
-            "cHJvdG9jb2wuY29tbW9uLlBsYXllcmIGcHJvdG8z"));
+            "b24ucHJvdG8ibQoHUmVxdWVzdBIMCgRuYW1lGAEgASgJEhsKE2Nvbm5lY3Rp",
+            "b25fZ3JvdXBfaWQYAiABKAkSNwoHcHJpdmFjeRgDIAEoDjImLnRyb24ucHJv",
+            "dG9jb2wubWVzc2FnZXMuY29tbW9uLlByaXZhY3kizgEKCFJlc3BvbnNlEjMK",
+            "BWNvbG9yGAEgASgLMiQudHJvbi5wcm90b2NvbC5tZXNzYWdlcy5jb21tb24u",
+            "Q29sb3ISGwoTY29ubmVjdGlvbl9ncm91cF9pZBgCIAEoCRI4CghzZXR0aW5n",
+            "cxgDIAEoCzImLnRyb24ucHJvdG9jb2wubWVzc2FnZXMuY29tbW9uLlNldHRp",
+            "bmcSNgoHcGxheWVycxgEIAMoCzIlLnRyb24ucHJvdG9jb2wubWVzc2FnZXMu",
+            "Y29tbW9uLlBsYXllcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Tron.Protocol.Common.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Request), global::Tron.Protocol.Messages.Request.Parser, new[]{ "Name", "ConnectionGroupId", "Privacy" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Response), global::Tron.Protocol.Messages.Response.Parser, new[]{ "Color", "ConnectionGroupId", "Settings", "Players" }, null, null, null, null)
@@ -103,9 +104,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "privacy" field.</summary>
     public const int PrivacyFieldNumber = 3;
-    private global::Tron.Protocol.Common.Privacy privacy_ = global::Tron.Protocol.Common.Privacy.Public;
+    private global::Tron.Protocol.Messages.Common.Privacy privacy_ = global::Tron.Protocol.Messages.Common.Privacy.Public;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Privacy Privacy {
+    public global::Tron.Protocol.Messages.Common.Privacy Privacy {
       get { return privacy_; }
       set {
         privacy_ = value;
@@ -136,7 +137,7 @@ namespace Tron.Protocol.Messages {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (ConnectionGroupId.Length != 0) hash ^= ConnectionGroupId.GetHashCode();
-      if (Privacy != global::Tron.Protocol.Common.Privacy.Public) hash ^= Privacy.GetHashCode();
+      if (Privacy != global::Tron.Protocol.Messages.Common.Privacy.Public) hash ^= Privacy.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,7 +159,7 @@ namespace Tron.Protocol.Messages {
         output.WriteRawTag(18);
         output.WriteString(ConnectionGroupId);
       }
-      if (Privacy != global::Tron.Protocol.Common.Privacy.Public) {
+      if (Privacy != global::Tron.Protocol.Messages.Common.Privacy.Public) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Privacy);
       }
@@ -176,7 +177,7 @@ namespace Tron.Protocol.Messages {
       if (ConnectionGroupId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ConnectionGroupId);
       }
-      if (Privacy != global::Tron.Protocol.Common.Privacy.Public) {
+      if (Privacy != global::Tron.Protocol.Messages.Common.Privacy.Public) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Privacy);
       }
       if (_unknownFields != null) {
@@ -196,7 +197,7 @@ namespace Tron.Protocol.Messages {
       if (other.ConnectionGroupId.Length != 0) {
         ConnectionGroupId = other.ConnectionGroupId;
       }
-      if (other.Privacy != global::Tron.Protocol.Common.Privacy.Public) {
+      if (other.Privacy != global::Tron.Protocol.Messages.Common.Privacy.Public) {
         Privacy = other.Privacy;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -219,7 +220,7 @@ namespace Tron.Protocol.Messages {
             break;
           }
           case 24: {
-            Privacy = (global::Tron.Protocol.Common.Privacy) input.ReadEnum();
+            Privacy = (global::Tron.Protocol.Messages.Common.Privacy) input.ReadEnum();
             break;
           }
         }
@@ -267,9 +268,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "color" field.</summary>
     public const int ColorFieldNumber = 1;
-    private global::Tron.Protocol.Common.Color color_;
+    private global::Tron.Protocol.Messages.Common.Color color_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Color Color {
+    public global::Tron.Protocol.Messages.Common.Color Color {
       get { return color_; }
       set {
         color_ = value;
@@ -289,9 +290,9 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "settings" field.</summary>
     public const int SettingsFieldNumber = 3;
-    private global::Tron.Protocol.Common.Setting settings_;
+    private global::Tron.Protocol.Messages.Common.Setting settings_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tron.Protocol.Common.Setting Settings {
+    public global::Tron.Protocol.Messages.Common.Setting Settings {
       get { return settings_; }
       set {
         settings_ = value;
@@ -300,11 +301,11 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "players" field.</summary>
     public const int PlayersFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Tron.Protocol.Common.Player> _repeated_players_codec
-        = pb::FieldCodec.ForMessage(34, global::Tron.Protocol.Common.Player.Parser);
-    private readonly pbc::RepeatedField<global::Tron.Protocol.Common.Player> players_ = new pbc::RepeatedField<global::Tron.Protocol.Common.Player>();
+    private static readonly pb::FieldCodec<global::Tron.Protocol.Messages.Common.Player> _repeated_players_codec
+        = pb::FieldCodec.ForMessage(34, global::Tron.Protocol.Messages.Common.Player.Parser);
+    private readonly pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Player> players_ = new pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Player>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Tron.Protocol.Common.Player> Players {
+    public pbc::RepeatedField<global::Tron.Protocol.Messages.Common.Player> Players {
       get { return players_; }
     }
 
@@ -392,7 +393,7 @@ namespace Tron.Protocol.Messages {
       }
       if (other.color_ != null) {
         if (color_ == null) {
-          Color = new global::Tron.Protocol.Common.Color();
+          Color = new global::Tron.Protocol.Messages.Common.Color();
         }
         Color.MergeFrom(other.Color);
       }
@@ -401,7 +402,7 @@ namespace Tron.Protocol.Messages {
       }
       if (other.settings_ != null) {
         if (settings_ == null) {
-          Settings = new global::Tron.Protocol.Common.Setting();
+          Settings = new global::Tron.Protocol.Messages.Common.Setting();
         }
         Settings.MergeFrom(other.Settings);
       }
@@ -419,7 +420,7 @@ namespace Tron.Protocol.Messages {
             break;
           case 10: {
             if (color_ == null) {
-              Color = new global::Tron.Protocol.Common.Color();
+              Color = new global::Tron.Protocol.Messages.Common.Color();
             }
             input.ReadMessage(Color);
             break;
@@ -430,7 +431,7 @@ namespace Tron.Protocol.Messages {
           }
           case 26: {
             if (settings_ == null) {
-              Settings = new global::Tron.Protocol.Common.Setting();
+              Settings = new global::Tron.Protocol.Messages.Common.Setting();
             }
             input.ReadMessage(Settings);
             break;
