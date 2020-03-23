@@ -25,13 +25,13 @@ namespace Tron.Protocol.Messages {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgtSZWFkeS5wcm90bxIWdHJvbi5wcm90b2NvbC5tZXNzYWdlcxoMQ29tbW9u",
-            "LnByb3RvIksKBVJlYWR5EjMKBWNvbG9yGAEgASgLMiQudHJvbi5wcm90b2Nv",
-            "bC5tZXNzYWdlcy5jb21tb24uQ29sb3ISDQoFcmVhZHkYAiABKAhiBnByb3Rv",
-            "Mw=="));
+            "LnByb3RvIk4KBVJlYWR5EjMKBWNvbG9yGAEgASgLMiQudHJvbi5wcm90b2Nv",
+            "bC5tZXNzYWdlcy5jb21tb24uQ29sb3ISEAoIaXNfcmVhZHkYAiABKAhiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Tron.Protocol.Messages.Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Ready), global::Tron.Protocol.Messages.Ready.Parser, new[]{ "Color", "Ready_" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tron.Protocol.Messages.Ready), global::Tron.Protocol.Messages.Ready.Parser, new[]{ "Color", "IsReady" }, null, null, null, null)
           }));
     }
     #endregion
@@ -64,7 +64,7 @@ namespace Tron.Protocol.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Ready(Ready other) : this() {
       color_ = other.color_ != null ? other.color_.Clone() : null;
-      ready_ = other.ready_;
+      isReady_ = other.isReady_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,14 +84,14 @@ namespace Tron.Protocol.Messages {
       }
     }
 
-    /// <summary>Field number for the "ready" field.</summary>
-    public const int Ready_FieldNumber = 2;
-    private bool ready_;
+    /// <summary>Field number for the "is_ready" field.</summary>
+    public const int IsReadyFieldNumber = 2;
+    private bool isReady_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Ready_ {
-      get { return ready_; }
+    public bool IsReady {
+      get { return isReady_; }
       set {
-        ready_ = value;
+        isReady_ = value;
       }
     }
 
@@ -109,7 +109,7 @@ namespace Tron.Protocol.Messages {
         return true;
       }
       if (!object.Equals(Color, other.Color)) return false;
-      if (Ready_ != other.Ready_) return false;
+      if (IsReady != other.IsReady) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -117,7 +117,7 @@ namespace Tron.Protocol.Messages {
     public override int GetHashCode() {
       int hash = 1;
       if (color_ != null) hash ^= Color.GetHashCode();
-      if (Ready_ != false) hash ^= Ready_.GetHashCode();
+      if (IsReady != false) hash ^= IsReady.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -135,9 +135,9 @@ namespace Tron.Protocol.Messages {
         output.WriteRawTag(10);
         output.WriteMessage(Color);
       }
-      if (Ready_ != false) {
+      if (IsReady != false) {
         output.WriteRawTag(16);
-        output.WriteBool(Ready_);
+        output.WriteBool(IsReady);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -150,7 +150,7 @@ namespace Tron.Protocol.Messages {
       if (color_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Color);
       }
-      if (Ready_ != false) {
+      if (IsReady != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -170,8 +170,8 @@ namespace Tron.Protocol.Messages {
         }
         Color.MergeFrom(other.Color);
       }
-      if (other.Ready_ != false) {
-        Ready_ = other.Ready_;
+      if (other.IsReady != false) {
+        IsReady = other.IsReady;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -192,7 +192,7 @@ namespace Tron.Protocol.Messages {
             break;
           }
           case 16: {
-            Ready_ = input.ReadBool();
+            IsReady = input.ReadBool();
             break;
           }
         }
