@@ -20,8 +20,8 @@ enum ConnectState {
 }
 
 enum ErrorCode {
-    ERRORCODES_OTHER = 0;
-    ERRORCODES_NOT_EXISTING_LOBBY = 1;
+    ERRORCODE_OTHER = 0;
+    ERRORCODE_NOT_EXISTING_LOBBY = 1;
     //TODO: extend list of most common errors
 }
 
