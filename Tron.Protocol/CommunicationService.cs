@@ -94,12 +94,31 @@ namespace Tron.Protocol
 
                     if(Handshake(inputStream, outputStream, out var clientId))
                     {
-                        //TODO: hibakezelés: TryAdd lehet false
-                        playerStreams.TryAdd((ClientId)clientId, new ClientStreams
+                        var success = playerStreams.TryAdd((ClientId)clientId, new ClientStreams
                         {
                             InputStream = inputStream,
                             OutputStream = outputStream
                         });
+
+                        if(!success)
+                        {
+                            gameEngine.DisconnectPlayer(new PlayerId
+                            {
+                                Id = clientId.Value.PlayerId,
+                                LobbyId = clientId.Value.LobbyId
+                            });
+
+                            var errorMessage = new ErrorMessage
+                            {
+                                Message = "Something went wrong. Connection aborted",
+                                Type = ErrorType.Other
+                            };
+
+                            mapper.Map<Error>(errorMessage).WriteTo(outputStream);
+
+                            outputStream.Dispose();
+                            inputStream.Dispose();
+                        }
                     }
                 }
             }
@@ -112,7 +131,7 @@ namespace Tron.Protocol
         {
             var connectRequestMessage = Request.Parser.ParseFrom(inputStream);
             
-            if(gameEngine.AcceptNewPlayer(mapper.Map<ConnectRequestMessage>(connectRequestMessage), out var responseMessage))
+            if(gameEngine.TryAcceptNewPlayer(mapper.Map<ConnectRequestMessage>(connectRequestMessage), out var responseMessage))
             {
                 var connectResponseMessage = mapper.Map<Response>(responseMessage);
                 connectResponseMessage.WriteTo(outputStream);
