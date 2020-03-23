@@ -32,7 +32,7 @@ message Color {
 message Player {
     string name = 1;
     Color color = 2;
-    bool ready = 3;
+    bool is_ready = 3;
 }
 
 message Position {
