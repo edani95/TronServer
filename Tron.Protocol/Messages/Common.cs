@@ -43,9 +43,9 @@ namespace Tron.Protocol.Messages.Common {
             "SVZBVEUQASpaCglEaXJlY3Rpb24SEAoMRElSRUNUSU9OX1VQEAASEgoORElS",
             "RUNUSU9OX0RPV04QARISCg5ESVJFQ1RJT05fTEVGVBACEhMKD0RJUkVDVElP",
             "Tl9SSUdIVBADKkUKDENvbm5lY3RTdGF0ZRIYChRDT05ORUNUU1RBVEVfQ09O",
-            "TkVDVBAAEhsKF0NPTk5FQ1RTVEFURV9ESVNDT05ORUNUEAEqRAoJRXJyb3JD",
-            "b2RlEhQKEEVSUk9SQ09ERVNfT1RIRVIQABIhCh1FUlJPUkNPREVTX05PVF9F",
-            "WElTVElOR19MT0JCWRABYgZwcm90bzM="));
+            "TkVDVBAAEhsKF0NPTk5FQ1RTVEFURV9ESVNDT05ORUNUEAEqQgoJRXJyb3JD",
+            "b2RlEhMKD0VSUk9SQ09ERV9PVEhFUhAAEiAKHEVSUk9SQ09ERV9OT1RfRVhJ",
+            "U1RJTkdfTE9CQlkQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tron.Protocol.Messages.Common.Privacy), typeof(global::Tron.Protocol.Messages.Common.Direction), typeof(global::Tron.Protocol.Messages.Common.ConnectState), typeof(global::Tron.Protocol.Messages.Common.ErrorCode), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -79,11 +79,11 @@ namespace Tron.Protocol.Messages.Common {
   }
 
   public enum ErrorCode {
-    [pbr::OriginalName("ERRORCODES_OTHER")] SOther = 0,
+    [pbr::OriginalName("ERRORCODE_OTHER")] Other = 0,
     /// <summary>
     ///TODO: extend list of most common errors
     /// </summary>
-    [pbr::OriginalName("ERRORCODES_NOT_EXISTING_LOBBY")] SNotExistingLobby = 1,
+    [pbr::OriginalName("ERRORCODE_NOT_EXISTING_LOBBY")] NotExistingLobby = 1,
   }
 
   #endregion

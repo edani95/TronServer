@@ -75,7 +75,7 @@ namespace Tron.Protocol.Messages {
 
     /// <summary>Field number for the "error_code" field.</summary>
     public const int ErrorCodeFieldNumber = 1;
-    private global::Tron.Protocol.Messages.Common.ErrorCode errorCode_ = global::Tron.Protocol.Messages.Common.ErrorCode.SOther;
+    private global::Tron.Protocol.Messages.Common.ErrorCode errorCode_ = global::Tron.Protocol.Messages.Common.ErrorCode.Other;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Tron.Protocol.Messages.Common.ErrorCode ErrorCode {
       get { return errorCode_; }
@@ -116,7 +116,7 @@ namespace Tron.Protocol.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) hash ^= ErrorCode.GetHashCode();
+      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.Other) hash ^= ErrorCode.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -131,7 +131,7 @@ namespace Tron.Protocol.Messages {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) {
+      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.Other) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ErrorCode);
       }
@@ -147,7 +147,7 @@ namespace Tron.Protocol.Messages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) {
+      if (ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.Other) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrorCode);
       }
       if (Message.Length != 0) {
@@ -164,7 +164,7 @@ namespace Tron.Protocol.Messages {
       if (other == null) {
         return;
       }
-      if (other.ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.SOther) {
+      if (other.ErrorCode != global::Tron.Protocol.Messages.Common.ErrorCode.Other) {
         ErrorCode = other.ErrorCode;
       }
       if (other.Message.Length != 0) {
