@@ -6,5 +6,5 @@ package tron.protocol.messages;
 
 message Ready {
     tron.protocol.messages.common.Color color = 1;
-    bool ready = 2;
+    bool is_ready = 2;
 }
