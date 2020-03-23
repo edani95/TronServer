@@ -16,6 +16,8 @@ namespace Tron.Protocol.AutoMapper
         public AMProfile()
         {
             // Common
+            CreateMap<EngineCommon.ErrorType, ProtocolCommon.ErrorCode>()
+                .ConvertUsing<ErrorTypeEngineToProtocolConverter>();
             CreateMap<System.Drawing.Color, ProtocolCommon.Color>()
                 .ForMember(c => c.Rgb, config =>
                 {
